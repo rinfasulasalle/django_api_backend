@@ -18,9 +18,8 @@ from .dropdowns import (
     DropdownEspecializaciones,
     DropdownSedes,
 )
-
-from .usuario import Usuario
 '''
+from .usuario import Usuarios
 from .trabajador import Trabajador
 from .sueldo import Sueldo
 from .contrato import Contrato
