@@ -21,7 +21,7 @@ from .dropdowns import (
 
 from .usuario import Usuario
 from .trabajador import Trabajador
-from .sueldo import Sueldo
+'''from .sueldo import Sueldo
 from .contrato import Contrato
 '''
 from .cuenta_bancaria import CuentaBancaria
