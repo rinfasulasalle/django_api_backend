@@ -85,7 +85,7 @@ DATABASES = {
         'HOST': config['mysql']['host'],
         'PORT': config['mysql']['port'],
         'USER': config['mysql']['user'],
-        'PASSWORD': config['mysql']['password'],
+        'PASSWORD': config['mysql']['pass'],
         'NAME': config['mysql']['database'],
         'OPTIONS': {
             'charset': 'utf8mb4',
