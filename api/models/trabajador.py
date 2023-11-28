@@ -9,7 +9,7 @@ class Trabajador(models.Model):
     trabajador_nacionalidad = models.CharField(max_length=100, default='No Especificado')
     trabajador_fecha_nacimiento = models.DateField()
     trabajador_ubigeo = models.CharField(max_length=255, default='No Especificado')
-    trabajador_telefono = models.CharField(max_length=100)
+    #trabajador_telefono = models.CharField(max_length=100)
     trabajador_sexo = models.CharField(
         max_length=15,
         choices=[
