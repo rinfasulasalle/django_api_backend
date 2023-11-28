@@ -20,10 +20,10 @@ from .dropdowns import (
 )
 
 from .usuario import Usuario
-from .trabajador import Trabajador
-'''from .sueldo import Sueldo
-from .contrato import Contrato
 '''
+from .trabajador import Trabajador
+from .sueldo import Sueldo
+from .contrato import Contrato
 from .cuenta_bancaria import CuentaBancaria
 from .direccion import Direccion
 from .estudio import Estudio'''
