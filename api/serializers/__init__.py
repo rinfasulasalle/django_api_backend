@@ -25,4 +25,5 @@ from .contrato import ContratoSerializer
 from .cuenta_bancaria import CuentaBancariaSerializer
 from .direccion import DireccionSerializer
 from .estudio import EstudioSerializer
+from .sueldo import SueldoSerializer
 from .datosglobales import DatosGlobalesSerializer
