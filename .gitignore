@@ -1,0 +1,58 @@
+# Archivos y carpetas específicos de Django
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos generados por el sistema de construcción
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Entorno virtual
+venv/
+env/
+
+# Archivos de configuración local
+*.sqlite3
+*.db
+
+# Archivos de configuración de desarrollo
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+
+# Carpeta de medios
+media/
+
+# Carpeta de archivos estáticos
+static/
+
+# Entorno de desarrollo
+.env
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de caché y sesiones
+__pycache__/
+*.cache/
+
+# Archivo de registro de errores
+logs/
+*.log
+
+# Archivo de configuración de Python
+pyvenv.cfg
+
+# Otros archivos y carpetas generados
+*.bak
+*.swp
+*.bak
+.DS_Store
+node_modules/
