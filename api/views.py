@@ -23,6 +23,8 @@ from .models import (
     CuentaBancaria,
     Direccion,
     Estudio,
+    Sueldo,
+    DatosGlobales
 )
 from .serializers import (
     DropdownRolesSerializer,
@@ -48,6 +50,8 @@ from .serializers import (
     CuentaBancariaSerializer,
     DireccionSerializer,
     EstudioSerializer,
+    SueldoSerializer,
+    DatosGlobalesSerializer
 )
 
 # Vistas basadas en conjuntos (viewsets) para modelos de "dropdowns"
@@ -146,4 +150,13 @@ class EstudioViewSet(viewsets.ModelViewSet):
     queryset = Estudio.objects.all()
     serializer_class = EstudioSerializer
 
-# ... Puede agregar más viewsets para modelos principales según sea necesario
+class SueldoViewSet(viewsets.ModelViewSet):
+    queryset = Sueldo.objects.all()
+    serializer_class = SueldoSerializer
+
+class DatosGlobalesViewSet(viewsets.ModelViewSet):
+    queryset = DatosGlobales.objects.all()
+    serializer_class = DatosGlobalesSerializer
+
+# ... Puedes agregar más viewsets para modelos principales según sea necesario
+    
