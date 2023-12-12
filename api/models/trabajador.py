@@ -43,6 +43,13 @@ class Trabajador(models.Model):
 
     # Cambia el nombre del campo a algo diferente a 'usuario'
     usuario_relacionado = models.OneToOneField(Usuario, primary_key=True, on_delete=models.CASCADE)
-
+    trabajador_estado = models.CharField(
+        max_length=15,
+        choices=[
+            ('Activo', 'Activo'),
+            ('Cesado', 'Cesado'),
+        ],
+        default='Activo'
+    )
     def __str__(self):
         return f"Trabajador: {self.usuario_relacionado}, {self.usuario_relacionado.usuario_nombres} {self.usuario_relacionado.usuario_apellidos}"
