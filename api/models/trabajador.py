@@ -3,6 +3,7 @@ from django.db import models
 from .usuario import Usuario
 
 class Trabajador(models.Model):
+    usuario_relacionado = models.OneToOneField(Usuario, primary_key=True, on_delete=models.CASCADE)
     #usuario_id = models.CharField(max_length=20, primary_key=True)
     trabajador_tipo_documento = models.CharField(max_length=100)
     #trabajador_path_documento = models.CharField(max_length=255, default='PATH/noNe')
@@ -40,16 +41,6 @@ class Trabajador(models.Model):
     trabajador_record = models.DecimalField(max_digits=20, decimal_places=2)
     trabajador_exp_previa = models.DecimalField(max_digits=20, decimal_places=2)
     trabajador_total_anios_exp = models.DecimalField(max_digits=20, decimal_places=2)
-
-    # Cambia el nombre del campo a algo diferente a 'usuario'
-    usuario_relacionado = models.OneToOneField(Usuario, primary_key=True, on_delete=models.CASCADE)
-    trabajador_estado = models.CharField(
-        max_length=15,
-        choices=[
-            ('Activo', 'Activo'),
-            ('Cesado', 'Cesado'),
-        ],
-        default='Activo'
-    )
+    
     def __str__(self):
-        return f"Trabajador: {self.usuario_relacionado}, {self.usuario_relacionado.usuario_nombres} {self.usuario_relacionado.usuario_apellidos}"
+        return f"Trabajador: {self.usuario_relacionado}, {self.usuario_relacionado.usuario_nombres} {self.usuario_relacionado.usuario_apellido_paterno} {self.usuario_relacionado.usuario_apellido_materno}"

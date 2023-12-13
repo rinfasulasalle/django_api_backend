@@ -3,8 +3,8 @@ from django.db import models
 from .trabajador import Trabajador  # Asegúrate de importar el modelo correcto
 
 class Sueldo(models.Model):
-    id = models.AutoField(primary_key=True)
     trabajador = models.OneToOneField(Trabajador, on_delete=models.CASCADE, unique=True)
+    id = models.AutoField(primary_key=True)
     sueldo_valor_basico = models.DecimalField(max_digits=20, decimal_places=2)
     sueldo_asigfam_porcentaje = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     sueldo_asignacion_familiar = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
