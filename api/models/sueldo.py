@@ -1,6 +1,8 @@
 # models/sueldo.py
 from django.db import models
 from .trabajador import Trabajador
+from decimal import Decimal
+
 
 class Sueldo(models.Model):
     trabajador = models.OneToOneField(Trabajador, on_delete=models.CASCADE, unique=True)
@@ -19,7 +21,7 @@ class Sueldo(models.Model):
         if not self.sueldo_opc_asigfam:
             self.sueldo_monto_asigfam = 0.0
         else:
-            self.sueldo_monto_asigfam = self.sueldo_valor_basico * 0.2
+            self.sueldo_monto_asigfam = self.sueldo_valor_basico * Decimal('0.2')
 
         if not self.sueldo_opc_bono:
             self.sueldo_monto_bono = 0.0
@@ -27,7 +29,11 @@ class Sueldo(models.Model):
             self.sueldo_monto_bono = self.sueldo_valor_basico * self.sueldo_porcentaje_bono
 
         # Calcula sueldo_mensual y sueldo_anual
-        self.sueldo_mensual = self.sueldo_valor_basico + self.sueldo_monto_asigfam + self.sueldo_monto_bono
+        self.sueldo_mensual = (
+            self.sueldo_valor_basico +
+            Decimal(str(self.sueldo_monto_asigfam)) +
+            Decimal(str(self.sueldo_monto_bono))
+        )
         self.sueldo_anual = self.sueldo_mensual * 14
 
         super().save(*args, **kwargs)
