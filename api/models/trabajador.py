@@ -5,7 +5,7 @@ from datetime import date
 class Trabajador(models.Model):
     usuario_relacionado = models.OneToOneField(Usuario, primary_key=True, on_delete=models.CASCADE)
     trabajador_tipo_documento = models.CharField(max_length=100)
-    trabajador_path_documento = models.FileField(upload_to='docs/identidades/', blank=True, null=True)
+    #trabajador_path_documento = models.FileField(upload_to='docs/identidades/', blank=True, null=True)
     trabajador_nacionalidad = models.CharField(max_length=100, default='No Especificado')
     trabajador_fecha_nacimiento = models.DateField()
     trabajador_ubigeo = models.CharField(max_length=255, default='No Especificado')
@@ -30,7 +30,7 @@ class Trabajador(models.Model):
         ],
         default='No Especificado'
     )
-    trabajador_path_doc_estado_civil = models.FileField(upload_to='docs/estados_civiles/', blank=True, null=True)
+    #trabajador_path_doc_estado_civil = models.FileField(upload_to='docs/estados_civiles/', blank=True, null=True)
     trabajador_fecha_ingreso_sistema = models.DateField()
     trabajador_fecha_ingreso = models.DateField()
     trabajador_edad = models.IntegerField(default=0)  # por defecto 0, se calculará con save()
